@@ -4,15 +4,17 @@ enum GuessResult{
 }
 
 class Game {
-  final int answer = Random().nextInt(100) + 1;
+  final int answer;
+
   int _totalGuess = 0;
 
   //constructor
-  Game() {
-    print('answer is $answer');
+  Game(int? maxRandom):
+        answer = Random().nextInt(maxRandom!) + 1 {
+    //print('answer is $answer');
   }
 
-  GuessResult? checkAns(int guess) {
+  GuessResult? checkAns( int guess) {
     _totalGuess++;
 
 
